@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('partials/header.ejs') %>
+
+    <title>The Best Resources that we recommend</title>
+
+</head>
+
+<body>
+    <!-- Navigation bar -->
+    <%- include ('partials/nav.ejs') %>
+
+    <!--Resources Hero -->
+    <div class="independent-hero">
+        <div class="container col-xxl-8 px-4 py-5">
+            <div class="row flex-row align-items-center g-5 py-5">
+                <div class="col-lg-8 col-sm-10">
+                    <h2 class="col-lg-12 display-5 fw-bold lh-1 mb-3">The best resources that we recommend, from across the world</h2>
+                    <p class="lead fw-bold">A list of books, articles, and other assets to creating the dream workplace that your talent deserves</p>
+                    <p class="lead">This page shares with you a list of resources - including books, articles, podcasts, videos, and other resources that will help organization create a dream workplace by focusing on all areas of their workplace - right from talent acquisition, to talent engagement and retention.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Resources Content -->
+    <div class="example-coontainer">
+        <div class="container col-xxl-8 px-4 py-3">
+            <div class="row flex-row align-items-top g-5 py-5">
+                <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
+                    <div class="feature col resource-holder">
+                        <div class="resource-container">
+                            <h2>Books</h2>
+                            <p>A recommendation list of the best books we have read that can help you create the dream workplace that your employees want - a perfrect blend of happiness, engagement, purpose, and performance.</p>
+                            <a href="#books" class="icon-link">
+                                See the books
+                            </a>
+                        </div>
+                    </div>
+                    <div class="feature col resource-holder">
+                        <div class="resource-container">
+                            <h2>Videos</h2>
+                            <p>Some of the best videos we have come across, with a description of why we like it, and how you can implement it in your organization. Go watch them and get inspired.</p>
+                            <a href="#videos" class="icon-link">
+                                See the videos
+                            </a>
+                        </div>
+                    </div>
+                    <div class="feature col resource-holder">
+                        <div class="resource-container">
+                            <h2>Podcasts</h2>
+                            <p>A list of podcasts that we listen to on a regular basis - motivates us, teaches us, makes us think, and sometimes makes us laugh out loud - all free.</p>
+                            <a href="#podcasts" class="icon-link">
+                                Listen to the podcasts
+                            </a>
+                        </div>
+                    </div>
+                    <div class="feature col resource-holder">
+                        <div class="resource-container">
+                            <h2>Sites</h2>
+                            <p>Paragraph of text beneath the heading to explain the heading. We'll add onto it with another sentence and probably just keep going until we run out of words.</p>
+                            <a href="#websites" class="icon-link">
+                                Visit the sites
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Books -->
+    <div class="example-container"id="books">
+        <div class="container col-xxl-8 px-4 py-2">
+            <div class="row flex-row align-items-top g-5 py-2">
+                <h3 style="color:#E14D2A;">The books we recommend</h3>
+                <% for (const book in books) { %>
+                <div class="book-loop mb-3">
+                    <p class="lead fw-bold"><%= book %></p>
+                    <p class="lead"><%= books[book][1] %></p>
+                    <em class="d-block mb-2"><%= books[book][2] %></em>
+                    <a target="_blank" href="<%= books[book][0] %>"><button class="btn btn-primary">Buy now</button></a>
+                </div>
+                <% } %>
+            </div>
+        </div>
+    </div>
+    
+    <!--Videos -->
+    <div class="example-container"id="videos">
+        <div class="container col-xxl-8 px-4 py-2">
+            <div class="row flex-row align-items-top g-5 py-2">
+                <h3 style="color:#E14D2A;">The videos we love</h3>
+                <% for (const video in videos) { %>
+                <div class="video-loop mb-3">
+                    <div class="row">
+                        <div class="col-lg-3 mb-2">
+                            <img class="img-video" src="<%= videos[video][3] %>">
+                        </div>
+                        <div class="col-lg-10">
+                            <p class="lead fw-bold"><%= video %></p>
+                        </div>
+                    </div>
+                    
+                    <p class="lead"><%= videos[video][1] %></p>
+                    <em class="d-block mb-2"><%= videos[video][2] %></em>
+                    <a target="_blank" href="<%= videos[video][0] %>"><button class="btn btn-primary">Watch now</button></a>
+                </div>
+                <% } %>
+            </div>
+        </div>
+    </div>
+    
+    <!--Podcasts -->
+    <div class="example-container"id="podcasts">
+        <div class="container col-xxl-8 px-4 py-2">
+            <div class="row flex-row align-items-top g-5 py-2">
+                <h3 style="color:#E14D2A;">The podcasts we love</h3>
+                <% for (const podcast in podcasts) { %>
+                <div class="podcast-loop mb-3">
+                    <p class="lead fw-bold"><%= podcast %></p>
+                    <p class="lead"><%= podcast[podcast][1] %></p>
+                    <em class="d-block mb-2"><%= podcasts[podcast][2] %></em>
+                    <a target="_blank" href="<%= podcast[podcast][0] %>"><button class="btn btn-primary">Listen now</button></a>
+                </div>
+                <% } %>
+            </div>
+        </div>
+    </div>
+    
+    <!--Websites -->
+    <div class="example-container"id="websites">
+        <div class="container col-xxl-8 px-4 py-2">
+            <div class="row flex-row align-items-top g-5 py-2">
+                <h3 style="color:#E14D2A;">The websites we love to follow</h3>
+                <% for (const website in websites) { %>
+                <div class="website-loop mb-3">
+                    <p class="lead fw-bold"><%= website %></p>
+                    <p class="lead"><%= websites[website][1] %></p>
+                    <em class="d-block mb-2"><%= websites[website][2] %></em>
+                    <a target="_blank" href="<%= websites[website][0] %>"><button class="btn btn-primary">Visit now</button></a>
+                </div>
+                <% } %>
+            </div>
+        </div>
+    </div>
+    
+    <!--Surveys-->
+    <%- include ('partials/survey.ejs') %>
+
+    <!--Footer -->
+    <%- include ('partials/footer.ejs') %>
+    <script>
+        $('.book-loop').paginate(4);
+        /*$('.video-loop').paginate(1);
+        $('.website-loop').paginate(4);
+        $('.podcast-loop').paginate(4);*/
+    </script>
+</body>
+
+</html>

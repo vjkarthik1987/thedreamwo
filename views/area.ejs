@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('partials/header.ejs') %>
+
+    <title>1000+ Examples for Employee Engagement</title>
+
+</head>
+
+<body>
+    <!-- Navigation bar -->
+    <%- include ('partials/nav.ejs') %>
+    <!--Surveys Hero -->
+    <div class="independent-hero">
+        <div class="container col-xxl-8 px-4 py-3">
+            <div class="row flex-row align-items-center g-5 py-3">
+                <div class="col-lg-8 col-sm-10">
+                    <h2 class="col-lg-12 display-5 fw-bold lh-1 mb-3">Understand each area in detail, Choose the right assessment for you</h2>
+                    <p class="lead fw-bold">Build your own set of surveys customized to your unique needs or choose from our pre-defined set of surveys. </p>
+                    <p class="lead">From talent acquisition, to talent compensation, take our surveys to understand where you stand vis-a-vis your goals, peers, and industry leaders. A completely free set of surveys built for every aspect of talent engagement.</p>
+                    <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+                        <a href="surveys"><button type="button" class="btn btn-primary  px-4 me-md-2">Build your survey</button></a>
+                        <a href="#content"><button type="button" class="btn btn-outline-secondary  px-4">Understand more</button></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Surveys Section -->
+    <div class="example-coontainer">
+        <div class="container col-xxl-8 px-4 py-3" id="content">
+            <div class="row flex-row align-items-center g-5 py-5">
+                <!-- All Examples -->
+                <div class="col-lg-8 col-sm-10 ">
+                    <h3 class="col-lg-9 lh-1 mb-3">Our Methodology</h3>
+                    <p class="col-lg-12 lh-3 lead mb-2">Our surveys are comprehensive and span across all areas of a talent lifecycle. For each area of the talent lifecyle, we have a set of questions that measures the effectiveness of numerous factors that have been listed down based on several hours of research. Each assessment is tailored to the custom requirements of the organization, and is curated based on these requirements. Select from a set of areas and let us know - and we will get back to you.</p>
+                    <% for (const area in areas) { %>
+                    <p class="col-lg-12 lh-3 lead mb-2 fw-bold"><%= area %></p>
+                    <p class="col-lg-12 lh-3 lead mb-2"><%= areas[area][1] %></p>
+                    <% } %>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Survey Details Section -->
+    <div id="survey-details">
+        <div class="container col-xxl-8 px-4 py-5">
+            <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+                <div class="col-10 col-sm-8 col-lg-6">
+                    <img src="/img/dashboard.png" class="d-block mx-lg-auto img-fluid" alt="Bootstrap Themes" width="700" height="auto" loading="lazy">
+                </div>
+                <div class="col-lg-6">
+                    <h2 class="display-5 fw-bold lh-1 mb-3">Our areas of assessment</h2>
+                    <% for (const area in areas) { %>
+                    <p class="lead d-inline"><span class="fw-bold"><%= area %> </span>|</p>
+                    <% } %>
+                    <div class="d-grid gap-2 d-md-flex justify-content-md-start mt-5">
+                        <a href="surveys"><button type="button" class="btn btn-primary  px-4 me-md-2">Build your survey</button></a>
+                        <a href="#content"><button type="button" class="btn btn-outline-secondary  px-4">Understand each area</button></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Footer -->
+    <%- include ('partials/footer.ejs') %>
+</body>
+
+</html>

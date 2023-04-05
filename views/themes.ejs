@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('partials/header.ejs') %>
+    <title>The 12 themes shaping employee engagement</title>
+</head>
+
+<body>
+    <!-- Navigation bar -->
+    <%- include ('partials/nav.ejs') %>
+
+    <!--Themes Hero -->
+    <div class="independent-hero">
+        <div class="container col-xxl-8 px-4 py-3">
+            <div class="row flex-row align-items-center g-5 py-5">
+                <div class="col-lg-8 col-sm-10">
+                    <h2 class="col-lg-9 display-5 fw-bold lh-1 mb-4">The 12 themes shaping organizations</h2>
+                    <p class="lead">Twenty years ago, mobiles were a new phenomenom. The Burj Khalifa was just a dream. Downloading a song over the internet used to take more than 10 minutes. iTunes was not there. And video calls were a fad that was never meant to be mainstream. Look around and see how the world has evolved today. Sadly, we have not seen such a transformation in the world of work. And we are out to correct it. We have identified 12 themes with regards to talent engagement that have undergone a major shift in the last two decades. These trends are spread across the talent engagement lifecycle. Read on to find out more.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Theme Section -->
+    <div class="example-coontainer">
+        <div class="container col-xxl-8 px-4 py-3">
+            <div class="row flex-row align-items-center g-5 py-5">
+                <% for (const theme in themes) { %>
+                <div class="col-lg-8 col-sm-10 mb-1 trend-holder">
+                    <h4 class="col-lg-9 lh-1 mb-3">From <%= themes[theme][0] %></h4>
+                    <p class="lead"><%= themes[theme][1] %></p>
+                    <% const path = "themes/" %>
+                    <a href= <%= path.concat(theme) %> ><button class="btn btn-primary">Read more</button></a>
+                </div> <% } %> 
+            </div>
+        </div>
+    </div>
+
+    <!--Surveys-->
+    <%- include ('partials/survey.ejs') %>
+
+
+    <!--Footer -->
+    <%- include ('partials/footer.ejs') %>
+</body>
+
+</html>

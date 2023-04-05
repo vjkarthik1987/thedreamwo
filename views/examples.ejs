@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('partials/header.ejs') %>
+
+    <title>500+ Employee Engagement Examples for Employee Engagement</title>
+
+</head>
+
+<body>
+    <!-- Navigation bar -->
+    <%- include ('partials/nav.ejs') %>
+
+    <!--Examples Hero -->
+    <div class="independent-hero">
+        <div class="container col-xl-10 col-xxl-8 px-4 py-3">
+            <div class="row align-items-center g-lg-5 py-5">
+                <div class="col-lg-7 text-center text-lg-start">
+                    <h2 class="display-6 fw-bold lh-1 mb-3">Comprehensive Real World Examples</h2>
+                    <p class="col-lg-10 fs-4">Our list of examples includes a collection of the best practices and initiatives used by companies that are successful and great in employee engagement. Read them, learn from them, and implement them in your organizaiton.</p>
+                    <div class="d-grid gap-2 d-sm-flex justify-content-sm-center justify-content-lg-start pb-4">
+                        <a href="/allExamples"><button type="button" class="btn btn-primary px-4 gap-3">See All Examples</button></a>
+                    </div>
+                </div>
+                <div class="col-md-10 mx-auto d-none d-md-block d-lg-block col-lg-5 d-none d-md-block d-lg-block">
+                    <div>
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <img class="d-block mx-auto mb-4" src="img/logos/automaticc.png" width="100%" height="auto">
+                            </div>
+                            <div class="col-sm-4">
+                                <img class="d-block mx-auto mb-4" src="img/logos/basecamp.png" width="100%" height="auto">
+                            </div>
+                            <div class="col-sm-4">
+                                <img class="d-block mx-auto mb-4" src="img/logos/dreamwork.png" width="100%" height="auto">
+                            </div>
+                            <div class="col-sm-4">
+                                <img class="d-block mx-auto mb-4" src="img/logos/google.png" width="100%" height="auto">
+                            </div>
+                            <div class="col-sm-4">
+                                <img class="d-block mx-auto mb-4" src="img/logos/hubspot.png" width="100%" height="auto">
+                            </div>
+                            <div class="col-sm-4">
+                                <img class="d-block mx-auto mb-4" src="img/logos/medium.png" width="100%" height="auto">
+                            </div>
+                            <div class="col-sm-4">
+                                <img class="d-block mx-auto mb-4" src="img/logos/microsoft.png" width="100%" height="auto">
+                            </div>
+                            <div class="col-sm-4">
+                                <img class="d-block mx-auto mb-4" src="img/logos/netflix.png" width="100%" height="auto">
+                            </div>
+                            <div class="col-sm-4">
+                                <img class="d-block mx-auto mb-4" src="img/logos/patagonia.svg" width="100%" height="auto">
+                            </div>
+                            <div class="col-sm-4">
+                                <img class="d-block mx-auto mb-4" src="img/logos/spotify.png" width="100%" height="auto">
+                            </div>
+                            <div class="col-sm-4">
+                                <img class="d-block mx-auto mb-4" src="img/logos/starbucks.png" width="100%" height="auto">
+                            </div>
+                            <div class="col-sm-4">
+                                <img class="d-block mx-auto mb-4" src="img/logos/valve.png" width="100%" height="auto">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Examples Section -->
+    <div class="example-coontainer">
+        <div class="container col-xxl-8 px-4 py-3">
+            <div class="row flex-row align-items-center g-5 py-5">
+                <!-- All Examples -->
+                <div class="col-lg-8 col-sm-10  trend-holder">
+                    <a href="allExamples">
+                        <h4 class="col-lg-9 lh-1">See All Our Examples</h4>
+                    </a>
+                </div>
+                <div class="col-lg-8 col-sm-10  trend-holder">
+                    <h4 class="col-lg-9 lh-1">See Examples by Each Theme</h4>
+                </div>
+                <!-- Trend Examples -->
+                <% for (const trend in trends) { %>
+                <% const path = "examples/" %>
+                <div class="col-lg-8 col-sm-10 trend-holder">
+                    <a href=<%= path.concat(trend) %>>
+                        <h4 class="col-lg-9 lh-1 mx-5"><%= trends[trend][0] %></h4>
+                    </a>
+                </div>
+                <% } %>
+
+            </div>
+        </div>
+    </div>
+
+    <!--Surveys-->
+    <%- include ('partials/survey.ejs') %>
+
+
+    <!--Footer -->
+    <%- include ('partials/footer.ejs') %>
+</body>
+
+</html>

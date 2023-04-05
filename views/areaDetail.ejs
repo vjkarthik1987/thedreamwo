@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('partials/header.ejs') %>
+    <title>What is The Dream Workplace - About us!</title>
+</head>
+
+<body>
+    <!-- Navigation bar -->
+    <%- include ('partials/nav.ejs') %>
+
+    <!--About Hero -->
+    <div class="independent-hero about">
+        <div class="container col-xxl-8 px-4 py-3">
+            <div class="row flex-row align-items-center g-5 py-5">
+                <div class="col-lg-6 col-sm-10">
+                    <h2 class="col-lg-9 display-4 fw-bold lh-1 mb-4"><%= mainArea %> </h2>
+                    <h4 class="fw-bold mb-4"><em><%= oneLiner %></em></h4>
+                    <p class="lead details"><%= aBitMore %></p>
+                    <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+                        <a href="#details"><button type="button" class="btn btn-primary  px-4 me-md-2">Learn More</button></a>
+                        <a href="/surveyForm" target="_blank"><button type="button" class="btn btn-secondary  px-4 me-md-2">Start Now</button></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Second Section -->
+    <div class="example-coontainer" id="details">
+        <div class="container col-xxl-8 px-4 py-3">
+            <div class="row flex-row align-items-center g-5 py-5">
+                <div class="col-lg-10 col-sm-10 mb-1 faq-holder">
+                    <h2 class="col-lg-12 lh-1 mb-3 d-inline display-4">Tell me more about the survey</h2>
+                    <h3 class="mt-3">What is the survey about?</h3>
+                    <p class="lead mt-3 col-lg-8 details"><%= details %></p>
+                    <h3 class="mt-3">Who is the audience for the survey?</h3>
+                    <p class="lead mt-3 col-lg-8 details"><%= audience %></p>
+                    <h3 class="mt-3">What are the areas covered?</h3>
+                    <p class="lead mt-3 col-lg-8 details"><%= areasCovered %></p>
+                    <div class="d-grid gap-1 d-md-flex justify-content-md-start">
+                        <a href="/surveyForm" target="_blank"><button type="button" class="btn btn-secondary  px-4 me-md-2">Start Now</button></a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!--Surveys-->
+    <%- include ('partials/areaFooter.ejs') %>
+
+
+    <!--Footer -->
+    <%- include ('partials/footer.ejs') %>
+</body>
+
+</html>

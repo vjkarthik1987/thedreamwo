@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('partials/header.ejs') %>
+    <title>The 12 themes shaping employee engagement</title>
+</head>
+
+<body>
+    <!-- Navigation bar -->
+    <%- include ('partials/nav.ejs') %>
+
+    <!--Themes Hero -->
+    <div class="independent-hero">
+        <div class="container col-xxl-8 px-4 py-3">
+            <div class="row flex-row align-items-center g-5 py-3">
+                <div class="col-lg-8 col-sm-10">
+                    <h2 class="col-lg-9 display-5 fw-bold lh-1 mb-4"><%= themes[theme][0] %></h2>
+                    <p class="lead"><%=themes[theme][1] %></p>
+                </div>
+            </div>
+            <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+                <a href="surveys"><button type="button" class="btn btn-primary  px-4 me-md-2">See Examples</button></a>
+                <a href="#content"><button type="button" class="btn btn-outline-secondary  px-4">Assess your organization</button></a>
+            </div>
+        </div>
+    </div>
+
+    <!--Examples Section -->
+    <div class="example-coontainer">
+        <div class="container col-xxl-8 px-4 py-5">
+            <div class="row flex-row align-items-top g-5 py-5">
+                <% examples.forEach(function(item){ %>
+                <div class="col-lg-4 col-mb-12 col-sm-12 pl-4">
+                    <div class="col-11 px-3 py-3 example-holder border border-warning">
+                        <p class="fw-bold lead mb-1"><%= item.org %></p>
+                        <p class="fst-italic mb-1"><span class="fw-bold">Area: </span><%= item.subTrend %></p>
+                        <p class="mb-1"><%= item.example %></p>
+                        <a target="_blank" href=<%= item.url %>>Read more</a>
+                    </div>
+                </div>
+                <% }) %>
+                <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+                    <a href="/examples/<%=theme%>"><button type="button" class="btn btn-primary  px-4 me-md-2">Read More Examples</button></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!--Surveys-->
+    <%- include ('partials/survey.ejs') %>
+
+
+    <!--Footer -->
+    <%- include ('partials/footer.ejs') %>
+</body>
+
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('partials/header.ejs') %>
+
+    <title>An Employee Guide for the Dream Workplace</title>
+
+</head>
+
+<body>
+    <!-- Navigation bar -->
+    <%- include ('partials/nav.ejs') %>
+
+    <!--TDW Document Hero  -->
+    <div class="independent-hero">
+        <div class="container col-xxl-8 px-4 py-5">
+            <div class="row flex-row align-items-center g-5 py-3">
+                <div class="col-lg-8 col-sm-10">
+                    <h2 class="col-lg-9 display-5 fw-bold lh-1 mb-3">The TDW Document</h2>
+                    <p class="lead">What should the dream workplace look like? What should be its policies and guidelines? How should it start? How far should it go? And most importantly, how should it be written. We have put up an example of the policy document for a handbook - ala Valve, Basecamp, and Hubspot - for you to use. Consider it as a template that you can use to get a headstart.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Examples Section -->
+    <div class="example-coontainer">
+        <div class="container col-xxl-8 px-4 py-5">
+            <div class="row flex-row align-items-center g-5 py-2">
+                <% chapters.forEach(function(chapter){ %>
+                <div class="col-lg-4 col-mb-6 col-sm-10 chapter-holder">
+                    <h4 class="col-lg-9 mb-1">Chapter <%= chapter.number %></h4>
+                    <a href="" class="col-lg-9 link-dark lead"><%= chapter.name %></a>
+                </div>
+                <% }) %>
+            </div>
+        </div>
+    </div>
+
+    <!--Surveys-->
+    <%- include ('partials/survey.ejs') %>
+
+
+    <!--Footer -->
+    <%- include ('partials/footer.ejs') %>
+
+</body>
+
+</html>
